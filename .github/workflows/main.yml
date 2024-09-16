@@ -1,0 +1,35 @@
+name: Node.js Basic Workflow
+
+# Trigger the workflow on every push or pull request to the main branch
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Checkout the code
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    # Step 2: Set up Node.js (specify the version, e.g., 16.x)
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+
+    # Step 3: Install Dependencies (express and node-fetch)
+    - name: Install dependencies
+      run: |
+        npm install express node-fetch
+
+    # Step 4: Run your Node.js script (replace `server.js` with your file)
+    - name: Run Node.js script
+      run: |
+        node server.js
