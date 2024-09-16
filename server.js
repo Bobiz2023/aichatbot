@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 const app = express();
 const port = 3000;
 
-const OPENAI_API_KEY = 'sk-...'; // Move API key to server
+const OPENAI_API_KEY = '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'; // Move API key to server
 
 app.use(express.json());
 
